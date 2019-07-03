@@ -72,6 +72,15 @@ const config = {
             elementName: `${elementName}`
           }
       }),
+      new HtmlWebpackPlugin({
+        template: 'DOCS.html',
+        filename: 'DOCS.html',
+            // manage placeholders
+        templateParameters: {
+            webpackageName: `${webpackageName}`,
+            elementName: `${elementName}`
+          }
+      }),
     new BundleAnalyzerPlugin({
         analyzerMode: 'static',
         reportFilename: 'bundleReport.html',

@@ -1,7 +1,7 @@
 {
-  "name": "@cubbles/vanilla-boilerplate",
-  "version": "0.1.12",
-  "description": "A template for a cubbles webpackage.",
+  "name": "my-currency",
+  "version": "1.0.0-SNAPSHOT",
+  "description": "Project to demonstrate how to develop Cubbles artifacts using the vanilla-boilerplate.",
   "private": true,
   "main": "\"\"",
   "scripts": {
@@ -31,15 +31,12 @@
       "start:watch": "Open the browser your your locally built webpackage and reload on changes."
     }
   },
-  "author": "Hans-Dieter Böhlau <hans-dieter.boehlau@incowia.com>",
-  "contributors": [
-    "Edwin Gamboa <edwingamboa355@gmail.com>"
-  ],
-  "license": "ISC",
+  "author": "Edwin Gamboa <edwingamboa355@gmail.com>",
+  "license": "MIT",
   "devDependencies": {
     "@cubbles/webpackage-document-api": "^0.2.1",
-    "@cubbles/webpackage-uploader": "^0.1.8",
-    "@cubbles/wpkg-utils": "^0.2.1",
+    "@cubbles/webpackage-uploader": "^0.1.10",
+    "@cubbles/wpkg-utils": "0.2.2",
     "autoprefixer": "^9.3.1",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
@@ -97,7 +94,7 @@
             "proxy": ""
           },
           "debug": false,
-          "dryRun": true
+          "dryRun": false
         },
         "prod": {
           "target": {
