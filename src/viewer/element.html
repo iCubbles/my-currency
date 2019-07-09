@@ -3,13 +3,7 @@
     Please make sure to create instances for ALL members defined in the manifest.
 -->
 <template id="<%= elementName %>">
-    <section class="<%= webpackageName %>_section">
-        <article>
-            First element:
-            <<%= webpackageName %>-elem1 member-id-ref="first"></<%= webpackageName %>-elem1>
-            <hr/>
-            Second element:
-            <<%= webpackageName %>-elem1 member-id-ref="second"></<%= webpackageName %>-elem1>
-        </article>
-    </section>
+    <h1>My Currency Viewer</h1>
+    <<%= webpackageName %>-converter member-id-ref="currencyConverter"></<%= webpackageName %>-converter>
+    <bar-chart member-id-ref="chart"></bar-chart>
 </template>

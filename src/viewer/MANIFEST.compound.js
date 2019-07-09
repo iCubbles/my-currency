@@ -11,35 +11,36 @@ module.exports = (webpackageName) => {
       {
         "name": "SHOWROOM",
         "path": "/SHOWROOM.html"
+      },
+      {
+        "name": "DOCS",
+        "path": "/DOCS.html"
       }
     ],
     dependencies: [
-      { artifactId: `${webpackageName}-elem1` }
+      { artifactId: `${webpackageName}-converter` },
+      { webpackageId: "com.incowia.lib.chart-library@1.0.0", artifactId: "bar-chart" }
     ],
     slots: [
       { slotId: "outerMessage", type: "string", direction: ["input", "output"] }
     ],
     // member declarations
     members: [
-      { artifactId: `${webpackageName}-elem1`, memberId: "first" },
-      { artifactId: `${webpackageName}-elem1`, memberId: "second" }
+      { artifactId: `${webpackageName}-converter`, memberId: "currencyConverter" },
+      { artifactId: 'bar-chart', memberId: "chart" }
     ],
     // connection declarations
     connections: [
       {
-        connectionId: "compound-message-to-first-message",
-        source: { slot: "outerMessage" },
-        destination: { memberIdRef: "first", slot: "message" }
-      },
-      {
-        connectionId: "first-message-to-second-message",
-        source: { memberIdRef: "first", slot: "message" },
-        destination: { memberIdRef: "second", slot: "message" }
-      },
-      {
-        connectionId: "second-message-to-compound-message",
-        source: { memberIdRef: "second", slot: "message" },
-        destination: { slot: "message" }
+        connectionId: 'data-connection',
+        source: {
+          memberIdRef: 'currencyConverter',
+          slot: 'conversionArray'
+        },
+        destination: {
+          memberIdRef: 'chart',
+          slot: 'dataColumns'
+        }
       }
     ]
   };
