@@ -118,12 +118,16 @@
           if (data) {
             // Update the Cubbles component model slots using the setters
             converted = data.rates[self.getForeignCurrency()];
-          } 
+          }
           self.setConversion(converted);
+          if (converted) {
             self.setConversionArray([
               [self.getBase(), 1],
               [self.getForeignCurrency(), converted]
             ]);
+          } else {
+            self.setConversionArray([]);
+            }
         }
 
         this.makeRequest(queryUrl, processRespond);
